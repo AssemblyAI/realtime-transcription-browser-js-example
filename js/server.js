@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get('/', async (request, res) => {
+app.get('/', async (req, res) => {
   try {
     const response = await axios.post('https://api.assemblyai.com/v2/realtime/token', // use account token to get a temp user token
       { expires_in: 3600 }, // can set a TTL timer in seconds.
