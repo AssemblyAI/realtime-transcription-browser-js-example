@@ -13,6 +13,7 @@ let recorder;
 const run = async () => {
   if (isRecording) { 
     if (socket) {
+      socket.send(JSON.stringify({terminate_session: true}));
       socket.close();
       socket = null;
     }
