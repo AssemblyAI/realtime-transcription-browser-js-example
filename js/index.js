@@ -45,7 +45,10 @@ const run = async () => {
       messageEl.innerText = msg;
     };
 
-    socket.onerror = (err) => console.error(err);
+    socket.onerror = (event) => console.error('Error:', event);
+    socket.onclose = event => {
+      console.log(event)
+    }
 
     socket.onopen = () => {
       // once socket is open, begin recording
@@ -56,7 +59,7 @@ const run = async () => {
             type: 'audio',
             mimeType: 'audio/webm;codecs=pcm', // endpoint requires 16bit PCM audio
             recorderType: StereoAudioRecorder,
-            timeSlice: 200, // set 200 ms intervals of data that sends to AAI
+            timeSlice: 250, // set 250 ms intervals of data that sends to AAI
             desiredSampRate: 16000,
             numberOfAudioChannels: 1, // real-time requires only one channel
             bufferSize: 4096,
