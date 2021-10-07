@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./js/server.js"
+    "server": "node ./js/server.js",
+    "client": "serve -l 3000"
   },
   "keywords": [],
   "author": "",
