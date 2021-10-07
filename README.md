@@ -15,3 +15,6 @@ In this app, we grab an audio stream from the user's computer and then send that
 4. Add your AssemblyAI key to line 13 of [`server.js`](https://github.com/AssemblyAI/realtime-transcription-browser-js-example/blob/62e07e1d2a7ee2e13349c4e817b048e41334c4ec/js/server.js#L13)
 5. Start the server with the command `npm run server` (will run on port 5000).
 7. Open a second terminal in the main directory of the project and start the client side with `npm run client` (will run on port 3000).
+
+## Further Documentation
+You can find further documentation for AssemblyAI's Real-Time [here](https://docs.assemblyai.com/overview/real-time-transcription)!
