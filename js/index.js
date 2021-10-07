@@ -3,13 +3,13 @@ const buttonEl = document.getElementById('button');
 const messageEl = document.getElementById('message');
 const titleEl = document.getElementById('real-time-title');
 
-// set initial state of application vars
+// set initial state of application variables
 messageEl.style.display = 'none';
 let isRecording = false;
 let socket;
 let recorder;
 
-// runs real-time transcription and handles global vars
+// runs real-time transcription and handles global variables
 const run = async () => {
   if (isRecording) { 
     if (socket) {
@@ -27,7 +27,8 @@ const run = async () => {
     const data = await response.json();
     const { token } = data;
 
-    socket = await new WebSocket(`wss://api.assemblyai.com/v2/realtime/ws?sample_rate=16000&token=${token}`); // establish wss with AssemblyAI (AAI) at 16000 sample rate
+    // establish wss with AssemblyAI (AAI) at 16000 sample rate
+    socket = await new WebSocket(`wss://api.assemblyai.com/v2/realtime/ws?sample_rate=16000&token=${token}`);
 
     // handle incoming messages to display transcription to the DOM
     const texts = {};
