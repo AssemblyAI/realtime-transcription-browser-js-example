@@ -7,7 +7,7 @@ In this app, we grab an audio stream from the user's computer and then send that
 
 ## How To Install and Run the Project	
 
-### Before running this app, you need to upgrade your AssemblyAI account to a Pro Account. That requires adding a card to your account; you can do that in your dashboard [here](https://app.assemblyai.com/)!
+### Before running this app, you need to upgrade your AssemblyAI account. That requires adding a card to your account; you can do that in your dashboard [here](https://app.assemblyai.com/)!
 
 1. Clone the repo to you local machine.
 2. Open a terminal in the main directory housing the project. In this case `realtime-transcription-browser-js-example`.
