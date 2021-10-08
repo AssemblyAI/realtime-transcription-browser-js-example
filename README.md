@@ -10,7 +10,7 @@ In this app, we grab an audio stream from the user's computer and then send that
 ##### ❗Important❗
 
 - Before running this app, you need to upgrade your AssemblyAI account. 
-- Running the app before upgrading will cause a **error with a 402 status code.** ⚠️
+- Running the app before upgrading will cause an **error with a 402 status code.** ⚠️
 - To upgrade your account you need to add a card. You can do that in your dashboard [here](https://app.assemblyai.com/)!
 
 ##### Instructions
