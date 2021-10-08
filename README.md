@@ -1,13 +1,19 @@
 # AssemblyAI Real-Time Transcription Browser Example
 
 ## Description
-This is an open-source repo provided by AssemblyAI that displays how to use our real-time API in the browser!
+This open-source repo provided by AssemblyAI displays how to use our real-time API in the browser!
 
-In this app, we grab an audio stream from the user's computer and then send that over a WebSocket to AssemblyAI for real-time transcription. Once AssemblyAI begins transcribing we display the text in the browser. This is accomplished using express.js for our backend and Vanilla JavaScript with the npm package [recordrtc](https://www.npmjs.com/package/recordrtc) on the frontend.
+In this app, we grab an audio stream from the user's computer and then send that over a WebSocket to AssemblyAI for real-time transcription. Once AssemblyAI begins transcribing, we display the text in the browser. This is accomplished using Express for our backend and Vanilla JavaScript with the npm package [recordrtc](https://www.npmjs.com/package/recordrtc) for our frontend.
 
-## How To Install and Run the Project	
+## How To Install and Run the Project
 
-### Before running this app, you need to upgrade your AssemblyAI account. That requires adding a card to your account; you can do that in your dashboard [here](https://app.assemblyai.com/)!
+##### ❗Important❗
+
+- Before running this app, you need to upgrade your AssemblyAI account. 
+- Running the app before upgrading will cause a **error with a 402 status code.** ⚠️
+- To upgrade your account you need to add a card. You can do that in your dashboard [here](https://app.assemblyai.com/)!
+
+##### Instructions
 
 1. Clone the repo to you local machine.
 2. Open a terminal in the main directory housing the project. In this case `realtime-transcription-browser-js-example`.
@@ -17,4 +23,6 @@ In this app, we grab an audio stream from the user's computer and then send that
 7. Open a second terminal in the main directory of the project and start the client side with `npm run client` (will run on port 3000).
 
 ## Further Documentation
-You can find further documentation for AssemblyAI's Real-Time endpoint [here](https://docs.assemblyai.com/overview/real-time-transcription)!
+- [AssemblyAI Real-Time Documention](https://docs.assemblyai.com/overview/real-time-transcription)
+- [recordrtc](https://www.npmjs.com/package/recordrtc)
+- [Express](https://expressjs.com/)
