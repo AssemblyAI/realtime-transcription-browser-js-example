@@ -23,12 +23,13 @@ const run = async () => {
       recorder = null;
     }
   } else {
+
     const response = await fetch('http://localhost:5000'); // get temp session token from server.js (backend)
     const data = await response.json();
     const { token } = data;
-
     // establish wss with AssemblyAI (AAI) at 16000 sample rate
     socket = await new WebSocket(`wss://api.assemblyai.com/v2/realtime/ws?sample_rate=16000&token=${token}`);
+
 
     // handle incoming messages to display transcription to the DOM
     const texts = {};
@@ -46,9 +47,14 @@ const run = async () => {
       messageEl.innerText = msg;
     };
 
-    socket.onerror = (event) => console.error('Error:', event);
+    socket.onerror = (event) => {
+      console.error(event);
+      socket.close();
+    }
+    
     socket.onclose = event => {
-      console.log(event)
+      console.log(event);
+      socket = null;
     }
 
     socket.onopen = () => {
