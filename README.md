@@ -7,6 +7,12 @@ In this app, we grab an audio stream from the user's computer and then send that
 
 ## How To Install and Run the Project
 
+##### ❗Important❗
+
+- Before running this app, you need to upgrade your AssemblyAI account. The real-time API is only available to upgraded accounts at this time.
+- Running the app before upgrading will cause an **error with a 402 status code.** ⚠️
+- To upgrade your account you need to add a card. You can do that in your dashboard [here](https://app.assemblyai.com/)!
+
 ##### Instructions
 
 1. Clone the repo to you local machine.
