@@ -1,7 +1,8 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
-const asyncHandler = require('express-async-handler')
+const asyncHandler = require('express-async-handler');
+const { response } = require('express');
 
 const app = express();
 app.use(express.json());
@@ -15,7 +16,6 @@ app.get('/', asyncHandler(async (req, res, next) => {
     const { data } = response;
     res.json(data);
   } catch (error) {
-    const err = new Error();
     const {response: {status, data}} = error;
     res.status(status).json(data);
   }
