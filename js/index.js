@@ -26,8 +26,15 @@ const run = async () => {
     const response = await fetch('http://localhost:5000'); // get temp session token from server.js (backend)
     const data = await response.json();
 
-    if(data.error){
-      alert(data.error)
+    console.log(response.status, response.statusText);
+
+    // check if error is for account not being upgraded otherwise, handle other types of errors
+    if(response.status == 402){
+      alert(`Error status: ${response.status}\n\n${data.error}`);
+      isRecording = !isRecording;
+    } else if (response.status !== 200) {
+      alert(`Error status: ${response.status}\n\n${response.statusText}`);
+      isRecording = !isRecording;
     }
     
     const { token } = data;
