@@ -15,7 +15,7 @@ In this app, we grab an audio stream from the user's computer and then send that
 
 ##### Instructions
 
-1. Clone the repo to you local machine.
+1. Clone the repo to your local machine.
 2. Open a terminal in the main directory housing the project. In this case `realtime-transcription-browser-js-example`.
 3. Run `npm install` to ensure all dependencies are installed.
 4. Add your AssemblyAI key to line 13 of [`server.js`](https://github.com/AssemblyAI/realtime-transcription-browser-js-example/blob/62e07e1d2a7ee2e13349c4e817b048e41334c4ec/js/server.js#L13)
