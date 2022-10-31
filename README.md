@@ -1,6 +1,5 @@
 # AssemblyAI Real-Time Transcription Browser Example
 
-## Description
 This open-source repo provided by AssemblyAI displays how to use our real-time API in the browser!
 
 In this app, we grab an audio stream from the user's computer and then send that over a WebSocket to AssemblyAI for real-time transcription. Once AssemblyAI begins transcribing, we display the text in the browser. This is accomplished using Express for our backend and Vanilla JavaScript with the npm package [recordrtc](https://www.npmjs.com/package/recordrtc) for our frontend.
