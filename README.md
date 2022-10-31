@@ -25,3 +25,7 @@ In this app, we grab an audio stream from the user's computer and then send that
 - [AssemblyAI Real-Time Documention](https://docs.assemblyai.com/overview/real-time-transcription)
 - [recordrtc](https://www.npmjs.com/package/recordrtc)
 - [Express](https://expressjs.com/)
+
+Contact Us
+--
+If you have any questions, please feel free to reach out to our Support team - support@assemblyai.com!
