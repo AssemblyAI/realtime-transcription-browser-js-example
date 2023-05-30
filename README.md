@@ -22,7 +22,7 @@ In this app, we grab an audio stream from the user's computer and then send that
 7. Open a second terminal in the main directory of the project and start the client side with `npm run client` (will run on port 3000).
 
 ## Further Documentation
-- [AssemblyAI Real-Time Documention](https://docs.assemblyai.com/overview/real-time-transcription)
+- [AssemblyAI Real-Time Documention](https://www.assemblyai.com/docs/Guides/real-time_streaming_transcription)
 - [recordrtc](https://www.npmjs.com/package/recordrtc)
 - [Express](https://expressjs.com/)
 
