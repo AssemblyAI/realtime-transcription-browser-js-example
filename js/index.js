@@ -76,7 +76,7 @@ const run = async () => {
             timeSlice: 250, // set 250 ms intervals of data that sends to AAI
             desiredSampRate: 16000,
             numberOfAudioChannels: 1, // real-time requires only one channel
-            bufferSize: 4096,
+            bufferSize: 16384,
             audioBitsPerSecond: 128000,
             ondataavailable: (blob) => {
               const reader = new FileReader();
