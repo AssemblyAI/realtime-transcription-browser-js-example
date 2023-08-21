@@ -33,7 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.47.0"],\
             ["express", "npm:4.18.2"],\
             ["prettier", "npm:3.0.2"],\
-            ["serve", "npm:14.2.0"]\
+            ["serve", "npm:14.2.1"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -331,7 +331,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.47.0"],\
             ["express", "npm:4.18.2"],\
             ["prettier", "npm:3.0.2"],\
-            ["serve", "npm:14.2.0"]\
+            ["serve", "npm:14.2.1"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -2067,10 +2067,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["serve", [\
-        ["npm:14.2.0", {\
-          "packageLocation": "./.yarn/cache/serve-npm-14.2.0-52c615436d-a1c26e6c3d.zip/node_modules/serve/",\
+        ["npm:14.2.1", {\
+          "packageLocation": "./.yarn/cache/serve-npm-14.2.1-1a7c090515-c39a517b5d.zip/node_modules/serve/",\
           "packageDependencies": [\
-            ["serve", "npm:14.2.0"],\
+            ["serve", "npm:14.2.1"],\
             ["@zeit/schemas", "npm:2.29.0"],\
             ["ajv", "npm:8.11.0"],\
             ["arg", "npm:5.0.2"],\

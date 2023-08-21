@@ -241,7 +241,7 @@ __metadata:
     eslint: ^8.47.0
     express: ^4.18.2
     prettier: ^3.0.2
-    serve: ^14.2.0
+    serve: ^14.2.1
   languageName: unknown
   linkType: soft
 
@@ -1748,9 +1748,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serve@npm:^14.2.0":
-  version: 14.2.0
-  resolution: "serve@npm:14.2.0"
+"serve@npm:^14.2.1":
+  version: 14.2.1
+  resolution: "serve@npm:14.2.1"
   dependencies:
     "@zeit/schemas": 2.29.0
     ajv: 8.11.0
@@ -1765,7 +1765,7 @@ __metadata:
     update-check: 1.5.4
   bin:
     serve: build/main.js
-  checksum: a1c26e6c3dd0c482589b39a105e2f09bebf20ee8a0358accd5d64b313952ad3e1a56b8af2bdfef269f9fd37140b4f6c940d12395c851e4a46dfdace8f97616e4
+  checksum: c39a517b5d795a0a5c2f9fb9ff088b7e4962c579e34ace5b85dd62f93e0eacbc8a90359792c153c444a83258ffda392113dff7bfd10d41ced574a2d1886c2994
   languageName: node
   linkType: hard
 
