@@ -7,11 +7,11 @@
     "client": "serve -l 3000"
   },
   "dependencies": {
-    "axios": "^1.4.0",
+    "axios": "^1.5.0",
     "cors": "^2.8.5",
-    "eslint": "^8.47.0",
+    "eslint": "^8.48.0",
     "express": "^4.18.2",
-    "prettier": "^3.0.2",
+    "prettier": "^3.0.3",
     "serve": "^14.2.1"
   },
   "browserslist": {
