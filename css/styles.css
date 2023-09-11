@@ -12,7 +12,7 @@ header {
 .header__title {
   font-size: 35px;
   font-weight: 400;
-  margin-bottom: .20em;
+  margin-bottom: 0.2em;
 }
 
 .header__sub-title {
@@ -26,8 +26,8 @@ header {
 
 .real-time-interface__button {
   display: flex;
-  padding: .5em;
-  border-radius: .5rem;
+  padding: 0.5em;
+  border-radius: 0.5rem;
   justify-content: center;
   cursor: pointer;
   background: #6b2bd6;
@@ -37,7 +37,7 @@ header {
 }
 
 .real-time-interface__title {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   font-size: 18px;
   font-weight: 525;
 }
@@ -45,10 +45,10 @@ header {
 .real-time-interface__message {
   text-align: left;
   width: 95%;
-  margin-top: .5em;
+  margin-top: 0.5em;
   font-size: 19px;
   font-weight: 400;
   box-shadow: 0 0 32px 0 rgb(0 0 0 / 16%);
   padding: 1em;
-  transition: .5s ease-in;
+  transition: 0.5s ease-in;
 }
