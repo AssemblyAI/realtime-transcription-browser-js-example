@@ -24,9 +24,9 @@ __metadata:
   linkType: hard
 
 "@eslint-community/regexpp@npm:^4.6.1":
-  version: 4.8.2
-  resolution: "@eslint-community/regexpp@npm:4.8.2"
-  checksum: da1cb0b7b210d93b44950b0fe050dd9c6c475513d5d6dfccbb6a9502a2fe630fcb3f8becd4e284cbb293df3ac756b79c6a487b59c42b9aea510b108278ea84ee
+  version: 4.9.0
+  resolution: "@eslint-community/regexpp@npm:4.9.0"
+  checksum: 82411f0643ab9bfd271bf12c8c75031266b13595d9371585ee3b0d680d918d4abf37c7e94d0da22e45817c9bbc59b79dfcbd672050dfb00af88fb89c80fd420f
   languageName: node
   linkType: hard
 

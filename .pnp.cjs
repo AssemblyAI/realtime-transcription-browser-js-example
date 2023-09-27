@@ -71,10 +71,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@eslint-community/regexpp", [\
-        ["npm:4.8.2", {\
-          "packageLocation": "./.yarn/cache/@eslint-community-regexpp-npm-4.8.2-4f06077d54-da1cb0b7b2.zip/node_modules/@eslint-community/regexpp/",\
+        ["npm:4.9.0", {\
+          "packageLocation": "./.yarn/cache/@eslint-community-regexpp-npm-4.9.0-c2f3ed9480-82411f0643.zip/node_modules/@eslint-community/regexpp/",\
           "packageDependencies": [\
-            ["@eslint-community/regexpp", "npm:4.8.2"]\
+            ["@eslint-community/regexpp", "npm:4.9.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -813,7 +813,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["eslint", "npm:8.50.0"],\
             ["@eslint-community/eslint-utils", "virtual:8c6bf98cbd9546125b9029c72c31c23291af97d4fb210e4373f6ba52f70ba363b04905249bdc3a6c6d8d6afc75932a7d57241cc077f4b32208df26c5ecd3904e#npm:4.4.0"],\
-            ["@eslint-community/regexpp", "npm:4.8.2"],\
+            ["@eslint-community/regexpp", "npm:4.9.0"],\
             ["@eslint/eslintrc", "npm:2.1.2"],\
             ["@eslint/js", "npm:8.50.0"],\
             ["@humanwhocodes/config-array", "npm:0.11.11"],\
