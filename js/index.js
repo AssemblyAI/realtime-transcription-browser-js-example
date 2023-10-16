@@ -28,6 +28,7 @@ const run = async () => {
 
     if (data.error) {
       alert(data.error);
+      return;
     }
 
     const { token } = data;
