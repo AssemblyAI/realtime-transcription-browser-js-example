@@ -243,6 +243,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "assemblyai-realtime-js-demo@workspace:."
   dependencies:
+    assemblyai: /Users/niels/DeepLearning/assemblyai/developer_tools/typescript
     axios: "npm:^1.5.1"
     cors: "npm:^2.8.5"
     eslint: "npm:^8.52.0"
@@ -252,6 +253,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"assemblyai@file:/Users/niels/DeepLearning/assemblyai/developer_tools/typescript::locator=assemblyai-realtime-js-demo%40workspace%3A.":
+  version: 3.0.0
+  resolution: "assemblyai@file:/Users/niels/DeepLearning/assemblyai/developer_tools/typescript#/Users/niels/DeepLearning/assemblyai/developer_tools/typescript::hash=c8e1ad&locator=assemblyai-realtime-js-demo%40workspace%3A."
+  dependencies:
+    axios: "npm:^1.4.0"
+    ws: "npm:^8.13.0"
+  checksum: 18b5c684b4295482f89436e4ae1765556894cdfa780dbc333b918f96fbefbf4581c5115a225cd67618afb1b0a542ff24646dce0cb03ca873a3cbaa8ec8a18790
+  languageName: node
+  linkType: hard
+
 "asynckit@npm:^0.4.0":
   version: 0.4.0
   resolution: "asynckit@npm:0.4.0"
@@ -259,7 +270,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.5.1":
+"axios@npm:^1.4.0, axios@npm:^1.5.1":
   version: 1.5.1
   resolution: "axios@npm:1.5.1"
   dependencies:
@@ -2032,6 +2043,21 @@ __metadata:
   version: 1.0.2
   resolution: "wrappy@npm:1.0.2"
   checksum: 159da4805f7e84a3d003d8841557196034155008f817172d4e986bd591f74aa82aa7db55929a54222309e01079a65a92a9e6414da5a6aa4b01ee44a511ac3ee5
+  languageName: node
+  linkType: hard
+
+"ws@npm:^8.13.0":
+  version: 8.14.2
+  resolution: "ws@npm:8.14.2"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ">=5.0.2"
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 815ff01d9bc20a249b2228825d9739268a03a4408c2e0b14d49b0e2ae89d7f10847e813b587ba26992bdc33e9d03bed131e4cae73ff996baf789d53e99c31186
   languageName: node
   linkType: hard
 

@@ -3,10 +3,10 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "server": "node ./js/server.js",
-    "client": "serve -l 3000"
+    "serve": "node server.js"
   },
   "dependencies": {
+    "assemblyai": "/Users/niels/DeepLearning/assemblyai/developer_tools/typescript",
     "axios": "^1.5.1",
     "cors": "^2.8.5",
     "eslint": "^8.52.0",
