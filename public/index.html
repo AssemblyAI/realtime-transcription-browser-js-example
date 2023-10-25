@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+  <body>
+    <header>
+      <h1 class="header__title">Real-Time Transcription</h1>
+      <p class="header__sub-title">
+        Try AssemblyAI's new real-time transcription endpoint!
+      </p>
+    </header>
+    <div class="real-time-interface">
+      <p id="real-time-title" class="real-time-interface__title">
+        Click start to begin recording!
+      </p>
+      <p id="button" class="real-time-interface__button">Start</p>
+      <p id="message" class="real-time-interface__message"></p>
+    </div>
+    <script src="assemblyai.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
