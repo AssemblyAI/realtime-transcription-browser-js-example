@@ -1943,10 +1943,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:2.3.0", {\
-        "packageLocation": "./.yarn/cache/punycode-npm-2.3.0-df4bdce06b-d4e7fbb96f.zip/node_modules/punycode/",\
+      ["npm:2.3.1", {\
+        "packageLocation": "./.yarn/cache/punycode-npm-2.3.1-97543c420d-febdc4362b.zip/node_modules/punycode/",\
         "packageDependencies": [\
-          ["punycode", "npm:2.3.0"]\
+          ["punycode", "npm:2.3.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2403,7 +2403,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/uri-js-npm-4.4.1-66d11cbcaf-af9540a82d.zip/node_modules/uri-js/",\
         "packageDependencies": [\
           ["uri-js", "npm:4.4.1"],\
-          ["punycode", "npm:2.3.0"]\
+          ["punycode", "npm:2.3.1"]\
         ],\
         "linkType": "HARD"\
       }]\
