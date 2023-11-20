@@ -28,7 +28,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["axios", "npm:1.6.2"],\
           ["cors", "npm:2.8.5"],\
-          ["eslint", "npm:8.53.0"],\
+          ["eslint", "npm:8.54.0"],\
           ["express", "npm:4.18.2"],\
           ["prettier", "npm:3.1.0"],\
           ["serve", "npm:14.2.1"]\
@@ -53,12 +53,12 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:2fc5c501d26c4c2fbc6a1d931e87d32adb7d9118fbcd7303a7b7faae809112bde136383859a265761a47c2852a001b7b803bf80e734ffa8ddc2ca30c129d1d76#npm:4.4.0", {\
-        "packageLocation": "./.yarn/__virtual__/@eslint-community-eslint-utils-virtual-4b69618f4d/0/cache/@eslint-community-eslint-utils-npm-4.4.0-d1791bd5a3-8d70bcdcd8.zip/node_modules/@eslint-community/eslint-utils/",\
+      ["virtual:8736507c17e995ef31571b70811862f4d0b0261c8e94b60764869da821bcd488d5a9c38f10ad1282a1f94cf8d70730f7b7b56d0a6f4e334235a8869b3b4c6516#npm:4.4.0", {\
+        "packageLocation": "./.yarn/__virtual__/@eslint-community-eslint-utils-virtual-9d6b4945e8/0/cache/@eslint-community-eslint-utils-npm-4.4.0-d1791bd5a3-8d70bcdcd8.zip/node_modules/@eslint-community/eslint-utils/",\
         "packageDependencies": [\
-          ["@eslint-community/eslint-utils", "virtual:2fc5c501d26c4c2fbc6a1d931e87d32adb7d9118fbcd7303a7b7faae809112bde136383859a265761a47c2852a001b7b803bf80e734ffa8ddc2ca30c129d1d76#npm:4.4.0"],\
+          ["@eslint-community/eslint-utils", "virtual:8736507c17e995ef31571b70811862f4d0b0261c8e94b60764869da821bcd488d5a9c38f10ad1282a1f94cf8d70730f7b7b56d0a6f4e334235a8869b3b4c6516#npm:4.4.0"],\
           ["@types/eslint", null],\
-          ["eslint", "npm:8.53.0"],\
+          ["eslint", "npm:8.54.0"],\
           ["eslint-visitor-keys", "npm:3.4.3"]\
         ],\
         "packagePeers": [\
@@ -86,7 +86,7 @@ const RAW_RUNTIME_STATE =
           ["debug", "virtual:088d1bae551712e30edb3cb49147628c22e7097f1d212dd42d93076023bf76fad49f4808cd2b0d50ae3644e85dcbdd3c0d141e9646770b84a91d8637667dcadd#npm:4.3.4"],\
           ["espree", "npm:9.6.1"],\
           ["globals", "npm:13.23.0"],\
-          ["ignore", "npm:5.2.4"],\
+          ["ignore", "npm:5.3.0"],\
           ["import-fresh", "npm:3.3.0"],\
           ["js-yaml", "npm:4.1.0"],\
           ["minimatch", "npm:3.1.2"],\
@@ -96,10 +96,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@eslint/js", [\
-      ["npm:8.53.0", {\
-        "packageLocation": "./.yarn/cache/@eslint-js-npm-8.53.0-1ffdbc6083-a372d55aa2.zip/node_modules/@eslint/js/",\
+      ["npm:8.54.0", {\
+        "packageLocation": "./.yarn/cache/@eslint-js-npm-8.54.0-0dcfb2afd1-4d491ff234.zip/node_modules/@eslint/js/",\
         "packageDependencies": [\
-          ["@eslint/js", "npm:8.53.0"]\
+          ["@eslint/js", "npm:8.54.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -335,7 +335,7 @@ const RAW_RUNTIME_STATE =
           ["assemblyai-realtime-js-demo", "workspace:."],\
           ["axios", "npm:1.6.2"],\
           ["cors", "npm:2.8.5"],\
-          ["eslint", "npm:8.53.0"],\
+          ["eslint", "npm:8.54.0"],\
           ["express", "npm:4.18.2"],\
           ["prettier", "npm:3.1.0"],\
           ["serve", "npm:14.2.1"]\
@@ -828,14 +828,14 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["eslint", [\
-      ["npm:8.53.0", {\
-        "packageLocation": "./.yarn/cache/eslint-npm-8.53.0-2fc5c501d2-e305a71ce2.zip/node_modules/eslint/",\
+      ["npm:8.54.0", {\
+        "packageLocation": "./.yarn/cache/eslint-npm-8.54.0-8736507c17-379827964f.zip/node_modules/eslint/",\
         "packageDependencies": [\
-          ["eslint", "npm:8.53.0"],\
-          ["@eslint-community/eslint-utils", "virtual:2fc5c501d26c4c2fbc6a1d931e87d32adb7d9118fbcd7303a7b7faae809112bde136383859a265761a47c2852a001b7b803bf80e734ffa8ddc2ca30c129d1d76#npm:4.4.0"],\
+          ["eslint", "npm:8.54.0"],\
+          ["@eslint-community/eslint-utils", "virtual:8736507c17e995ef31571b70811862f4d0b0261c8e94b60764869da821bcd488d5a9c38f10ad1282a1f94cf8d70730f7b7b56d0a6f4e334235a8869b3b4c6516#npm:4.4.0"],\
           ["@eslint-community/regexpp", "npm:4.10.0"],\
           ["@eslint/eslintrc", "npm:2.1.3"],\
-          ["@eslint/js", "npm:8.53.0"],\
+          ["@eslint/js", "npm:8.54.0"],\
           ["@humanwhocodes/config-array", "npm:0.11.13"],\
           ["@humanwhocodes/module-importer", "npm:1.0.1"],\
           ["@nodelib/fs.walk", "npm:1.2.8"],\
@@ -857,7 +857,7 @@ const RAW_RUNTIME_STATE =
           ["glob-parent", "npm:6.0.2"],\
           ["globals", "npm:13.23.0"],\
           ["graphemer", "npm:1.4.0"],\
-          ["ignore", "npm:5.2.4"],\
+          ["ignore", "npm:5.3.0"],\
           ["imurmurhash", "npm:0.1.4"],\
           ["is-glob", "npm:4.0.3"],\
           ["is-path-inside", "npm:3.0.3"],\
@@ -1343,10 +1343,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["ignore", [\
-      ["npm:5.2.4", {\
-        "packageLocation": "./.yarn/cache/ignore-npm-5.2.4-fbe6e989e5-4f7caf5d20.zip/node_modules/ignore/",\
+      ["npm:5.3.0", {\
+        "packageLocation": "./.yarn/cache/ignore-npm-5.3.0-fb0f5fa062-51594355ce.zip/node_modules/ignore/",\
         "packageDependencies": [\
-          ["ignore", "npm:5.2.4"]\
+          ["ignore", "npm:5.3.0"]\
         ],\
         "linkType": "HARD"\
       }]\
