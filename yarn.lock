@@ -79,11 +79,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@swimburger/isomorphic-streams@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@swimburger/isomorphic-streams/-/isomorphic-streams-1.1.1.tgz#27ad84b20be631012b0a6babbceae706f74cdd0b"
-  integrity sha512-E4ZHqsSA5A/xRRmi/rgnR84qPhiqHAjprBmwRtwiPC63mtMOUk/eYClRV69MuZWt6dsvgijHCdfdDCCrfy39nQ==
-
 "@ungap/structured-clone@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
@@ -139,11 +134,11 @@ array-flatten@1.1.1:
   resolved "https://registry.yarnpkg.com/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
   integrity sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==
 
-"assemblyai@file:../DeepLearning/assemblyai/developer_tools/typescript":
+assemblyai@^4.0.0:
   version "4.0.0"
+  resolved "https://registry.yarnpkg.com/assemblyai/-/assemblyai-4.0.0.tgz#2074b04623cc31851f98e5c895c2aa7d4064a742"
+  integrity sha512-dhASQcGbZuyGkeJN8h7iUzC7eICMyOeiuQ7A4v81vbiNvn1HOwGMli73nD3JN9sOw5JCsAoGRM2wgQMXFM+p2Q==
   dependencies:
-    "@swimburger/isomorphic-streams" "^1.1.1"
-    isomorphic-ws "^5.0.0"
     ws "^8.13.0"
 
 balanced-match@^1.0.0:
@@ -690,11 +685,6 @@ isexe@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
   integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
-
-isomorphic-ws@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/isomorphic-ws/-/isomorphic-ws-5.0.0.tgz#e5529148912ecb9b451b46ed44d53dae1ce04bbf"
-  integrity sha512-muId7Zzn9ywDsyXgTIafTry2sV3nySZeUDe6YedVd1Hvuuep5AsIlqK+XefWpYTyJG5e503F2xIuT2lcU6rCSw==
 
 js-yaml@^4.1.0:
   version "4.1.0"
