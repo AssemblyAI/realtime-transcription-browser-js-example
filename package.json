@@ -24,6 +24,5 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "yarn@4.0.0",
-  "devDependencies": {}
+  "packageManager": "yarn@4.0.2"
 }
