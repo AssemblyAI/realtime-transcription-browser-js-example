@@ -4,4 +4,6 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/sdks
-!.yarn/versions
+!.yarn/versions.yarn
+.env
+node_modules

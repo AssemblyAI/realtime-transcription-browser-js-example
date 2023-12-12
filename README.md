@@ -17,13 +17,12 @@ In this app, we grab an audio stream from the user's computer and then send that
 1. Clone the repo to your local machine.
 2. Open a terminal in the main directory housing the project. In this case `realtime-transcription-browser-js-example`.
 3. Run `yarn install` to ensure all dependencies are installed.
-4. Add your AssemblyAI key to line 14 of [`server.js`](https://github.com/AssemblyAI/realtime-transcription-browser-js-example/blob/62e07e1d2a7ee2e13349c4e817b048e41334c4ec/js/server.js#L13)
-5. Start the server with the command `yarn server` (will run on port 8000).
-6. Open a second terminal in the main directory of the project and start the client side with `yarn client` (will run on port 3000).
+4. Create a .env file and set your AssemblyAI API key. Use the [.env.example](./.env.example) as a reference.
+5. Start the application with the command `yarn serve` (will run on port 8000).
 
 ## Further Documentation
 
-- [AssemblyAI Real-Time Documention](https://www.assemblyai.com/docs/Guides/real-time_streaming_transcription)
+- [AssemblyAI Real-Time Documentation](https://www.assemblyai.com/docs/guides/real-time-streaming-transcription)
 - [recordrtc](https://www.npmjs.com/package/recordrtc)
 - [Express](https://expressjs.com/)
 
