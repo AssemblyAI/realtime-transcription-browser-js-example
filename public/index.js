@@ -33,7 +33,7 @@ const run = async () => {
     rt = new assemblyai.RealtimeService({ token: data.token });
     // handle incoming messages to display transcription to the DOM
     const texts = {};
-    rt.on('transcript', (message) => {
+    rt.on("transcript", (message) => {
       let msg = "";
       texts[message.audio_start] = message.text;
       const keys = Object.keys(texts);
@@ -46,12 +46,12 @@ const run = async () => {
       messageEl.innerText = msg;
     });
 
-    rt.on('error', async (error) => {
+    rt.on("error", async (error) => {
       console.error(error);
       await rt.close();
     });
 
-    rt.on('close', (event) => {
+    rt.on("close", (event) => {
       console.log(event);
       rt = null;
     });
