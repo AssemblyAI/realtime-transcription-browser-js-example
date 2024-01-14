@@ -55,13 +55,13 @@ __metadata:
   linkType: hard
 
 "@humanwhocodes/config-array@npm:^0.11.13":
-  version: 0.11.13
-  resolution: "@humanwhocodes/config-array@npm:0.11.13"
+  version: 0.11.14
+  resolution: "@humanwhocodes/config-array@npm:0.11.14"
   dependencies:
-    "@humanwhocodes/object-schema": "npm:^2.0.1"
-    debug: "npm:^4.1.1"
+    "@humanwhocodes/object-schema": "npm:^2.0.2"
+    debug: "npm:^4.3.1"
     minimatch: "npm:^3.0.5"
-  checksum: d76ca802d853366094d0e98ff0d0994117fc8eff96649cd357b15e469e428228f597cd2e929d54ab089051684949955f16ee905bb19f7b2f0446fb377157be7a
+  checksum: 66f725b4ee5fdd8322c737cb5013e19fac72d4d69c8bf4b7feb192fcb83442b035b92186f8e9497c220e58b2d51a080f28a73f7899bc1ab288c3be172c467541
   languageName: node
   linkType: hard
 
@@ -72,10 +72,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@humanwhocodes/object-schema@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@humanwhocodes/object-schema@npm:2.0.1"
-  checksum: 9dba24e59fdb4041829d92b693aacb778add3b6f612aaa9c0774f3b650c11a378cc64f042a59da85c11dae33df456580a3c36837b953541aed6ff94294f97fac
+"@humanwhocodes/object-schema@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@humanwhocodes/object-schema@npm:2.0.2"
+  checksum: 6fd83dc320231d71c4541d0244051df61f301817e9f9da9fd4cb7e44ec8aacbde5958c1665b0c419401ab935114fdf532a6ad5d4e7294b1af2f347dd91a6983f
   languageName: node
   linkType: hard
 
@@ -187,20 +187,20 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "assemblyai-realtime-js-demo@workspace:."
   dependencies:
-    assemblyai: "npm:^4.1.0"
+    assemblyai: "npm:^4.2.0"
     dotenv: "npm:^16.3.1"
     eslint: "npm:^8.56.0"
     express: "npm:^4.18.2"
-    prettier: "npm:^3.1.1"
+    prettier: "npm:^3.2.1"
   languageName: unknown
   linkType: soft
 
-"assemblyai@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "assemblyai@npm:4.1.0"
+"assemblyai@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "assemblyai@npm:4.2.0"
   dependencies:
     ws: "npm:^8.13.0"
-  checksum: 9f88f00475d5e725894b7e861e3053d248a32ec44f62345ba2319fefab6aab6783dede3ec4c8e0467c6a57081395fe29f2f34cb2bb0cfe4ec3c6ebc6279a2885
+  checksum: 48a21ed7d755819963087bc55e61e078c718c841e4371d1b09e206991c2433a5dfe2364fb7ba8c7feb9fb83813ed9ffcec946c2aa4b297d1997b622014ded5ff
   languageName: node
   linkType: hard
 
@@ -349,7 +349,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^4.1.1, debug@npm:^4.3.2":
+"debug@npm:^4.3.1, debug@npm:^4.3.2":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -1165,12 +1165,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "prettier@npm:3.1.1"
+"prettier@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "prettier@npm:3.2.1"
   bin:
     prettier: bin/prettier.cjs
-  checksum: facc944ba20e194ff4db765e830ffbcb642803381f0d2033ed397e79904fa4ccc877dc25ad68f42d36985c01d051c990ca1b905fb83d2d7d65fe69e4386fa1a3
+  checksum: e01284f25c1e9a96dfaf4f7d0bfdf0726b26afc732b0e645a2653174d4ad5a1e85ae21ec4d327c71536f1acf8fee1dff5ea35c5b4b8e5b83ff00fe1dd6fef146
   languageName: node
   linkType: hard
 
