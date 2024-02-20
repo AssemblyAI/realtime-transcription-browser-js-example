@@ -2,7 +2,7 @@
 
 This open-source repo provided by AssemblyAI displays how to use our real-time API in the browser!
 
-In this app, we grab an audio stream from the user's computer and then send that over a WebSocket to AssemblyAI for real-time transcription. Once AssemblyAI begins transcribing, we display the text in the browser. This is accomplished using Express for our backend and Vanilla JavaScript with the npm package [recordrtc](https://www.npmjs.com/package/recordrtc) for our frontend.
+In this app, we grab an audio stream from the user's computer and then send that over a WebSocket to AssemblyAI for real-time transcription. Once AssemblyAI begins transcribing, we display the text in the browser. This is accomplished using Express for our backend and the AudioWorklet to process the raw audio.
 
 ## How To Install and Run the Project
 
@@ -22,8 +22,8 @@ In this app, we grab an audio stream from the user's computer and then send that
 
 ## Further Documentation
 
-- [AssemblyAI Real-Time Documentation](https://www.assemblyai.com/docs/guides/real-time-streaming-transcription)
-- [recordrtc](https://www.npmjs.com/package/recordrtc)
+- [AssemblyAI Real-Time Documentation](https://www.assemblyai.com/docs/speech-to-text/real-time)
+- [MDN AudioWorklet](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
 - [Express](https://expressjs.com/)
 
 ## Contact Us
