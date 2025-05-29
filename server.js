@@ -1,28 +1,21 @@
-require("dotenv").config();
 const express = require("express");
 const path = require("path");
-const { AssemblyAI } = require("assemblyai");
+const { generateTempToken } = require("./tokenGenerator"); // your previously written function
 
-//Create new `AssemblyAI` instance with your API key
-const aai = new AssemblyAI({ apiKey: process.env.ASSEMBLYAI_API_KEY });
 const app = express();
-app.use(express.static("public"));
-app.use(
-  "/assemblyai.js",
-  express.static(
-    path.join(__dirname, "node_modules/assemblyai/dist/assemblyai.umd.js"),
-  ),
-);
-app.use(express.json());
+const PORT = 8000;
 
-app.get("/token", async (_req, res) => {
-  const token = await aai.realtime.createTemporaryToken({ expires_in: 3600 });
-  res.json({ token });
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/token", async (req, res) => {
+  try {
+    const token = await generateTempToken(60); // Max value 600
+    res.json({ token });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to generate token" });
+  }
 });
 
-app.set("port", 8000);
-const server = app.listen(app.get("port"), () => {
-  console.log(
-    `Server is running on port http://localhost:${server.address().port}`,
-  );
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
 });
