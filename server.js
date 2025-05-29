@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const { AssemblyAI } = require("assemblyai");
 
+//Create new `AssemblyAI` instance with your API key
 const aai = new AssemblyAI({ apiKey: process.env.ASSEMBLYAI_API_KEY });
 const app = express();
 app.use(express.static("public"));
