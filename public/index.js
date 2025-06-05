@@ -1,13 +1,13 @@
-// required dom elements
+// DOM elements
 const buttonEl = document.getElementById("button");
 const messageEl = document.getElementById("message");
 const titleEl = document.getElementById("real-time-title");
 
-// set initial state of application variables
-messageEl.style.display = "none";
 let isRecording = false;
-let rt;
+let ws;
 let microphone;
+
+messageEl.style.display = "none";
 
 function createMicrophone() {
   let stream;
@@ -15,68 +15,63 @@ function createMicrophone() {
   let audioWorkletNode;
   let source;
   let audioBufferQueue = new Int16Array(0);
+
   return {
     async requestPermission() {
       stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     },
     async startRecording(onAudioCallback) {
       if (!stream) stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
       audioContext = new AudioContext({
-        sampleRate: 16_000,
+        sampleRate: 16000,
         latencyHint: 'balanced'
       });
+
       source = audioContext.createMediaStreamSource(stream);
-
       await audioContext.audioWorklet.addModule('audio-processor.js');
-      audioWorkletNode = new AudioWorkletNode(audioContext, 'audio-processor');
 
+      audioWorkletNode = new AudioWorkletNode(audioContext, 'audio-processor');
       source.connect(audioWorkletNode);
       audioWorkletNode.connect(audioContext.destination);
+
       audioWorkletNode.port.onmessage = (event) => {
         const currentBuffer = new Int16Array(event.data.audio_data);
-        audioBufferQueue = mergeBuffers(
-          audioBufferQueue,
-          currentBuffer
-        );
+        audioBufferQueue = mergeBuffers(audioBufferQueue, currentBuffer);
 
-        const bufferDuration =
-          (audioBufferQueue.length / audioContext.sampleRate) * 1000;
+        const bufferDuration = (audioBufferQueue.length / audioContext.sampleRate) * 1000;
 
-        // wait until we have 100ms of audio data
         if (bufferDuration >= 100) {
           const totalSamples = Math.floor(audioContext.sampleRate * 0.1);
+          const finalBuffer = new Uint8Array(audioBufferQueue.subarray(0, totalSamples).buffer);
+          audioBufferQueue = audioBufferQueue.subarray(totalSamples);
 
-          const finalBuffer = new Uint8Array(
-            audioBufferQueue.subarray(0, totalSamples).buffer
-          );
-
-          audioBufferQueue = audioBufferQueue.subarray(totalSamples)
           if (onAudioCallback) onAudioCallback(finalBuffer);
         }
-      }
+      };
     },
     stopRecording() {
       stream?.getTracks().forEach((track) => track.stop());
       audioContext?.close();
       audioBufferQueue = new Int16Array(0);
     }
-  }
+  };
 }
+
 function mergeBuffers(lhs, rhs) {
-  const mergedBuffer = new Int16Array(lhs.length + rhs.length)
-  mergedBuffer.set(lhs, 0)
-  mergedBuffer.set(rhs, lhs.length)
-  return mergedBuffer
+  const merged = new Int16Array(lhs.length + rhs.length);
+  merged.set(lhs, 0);
+  merged.set(rhs, lhs.length);
+  return merged;
 }
 
-// runs real-time transcription and handles global variables
-const run = async () => {
+async function run() {
   if (isRecording) {
-    if (rt) {
-      await rt.close(false);
-      rt = null;
+    if (ws) {
+      ws.send(JSON.stringify({ type: "Terminate" }));
+      ws.close();
+      ws = null;
     }
-
     if (microphone) {
       microphone.stopRecording();
       microphone = null;
@@ -85,47 +80,51 @@ const run = async () => {
     microphone = createMicrophone();
     await microphone.requestPermission();
 
-    const response = await fetch("/token"); // get temp session token from server.js (backend)
+    const response = await fetch("http://localhost:8000/token");
     const data = await response.json();
-
-    if (data.error) {
-      alert(data.error);
+    if (data.error || !data.token) {
+      alert("Failed to get temp token");
       return;
     }
 
-    rt = new assemblyai.RealtimeService({ token: data.token });
-    // handle incoming messages to display transcription to the DOM
-    const texts = {};
-    rt.on("transcript", (message) => {
-      let msg = "";
-      texts[message.audio_start] = message.text;
-      const keys = Object.keys(texts);
-      keys.sort((a, b) => a - b);
-      for (const key of keys) {
-        if (texts[key]) {
-          msg += ` ${texts[key]}`;
+    const endpoint = `wss://streaming.assemblyai.com/v3/ws?sample_rate=16000&formatted_finals=true&token=${data.token}`;
+    ws = new WebSocket(endpoint);
+
+    const turns = {}; // keyed by turn_order
+
+    ws.onopen = () => {
+      console.log("WebSocket connected!");
+      messageEl.style.display = "";
+      microphone.startRecording((audioChunk) => {
+        if (ws.readyState === WebSocket.OPEN) {
+          ws.send(audioChunk);
         }
+      });
+    };
+
+    ws.onmessage = (event) => {
+      const msg = JSON.parse(event.data);
+      if (msg.type === "Turn") {
+        const { turn_order, transcript } = msg;
+        turns[turn_order] = transcript;
+
+        const orderedTurns = Object.keys(turns)
+          .sort((a, b) => Number(a) - Number(b))
+          .map((k) => turns[k])
+          .join(" ");
+
+        messageEl.innerText = orderedTurns;
       }
-      messageEl.innerText = msg;
-    });
+    };
 
-    rt.on("error", async (error) => {
-      console.error(error);
-      await rt.close();
-    });
+    ws.onerror = (err) => {
+      console.error("WebSocket error:", err);
+      alert("WebSocket error, check the console.");
+    };
 
-    rt.on("close", (event) => {
-      console.log(event);
-      rt = null;
-    });
-
-    await rt.connect();
-    // once socket is open, begin recording
-    messageEl.style.display = "";
-
-    await microphone.startRecording((audioData) => {
-      rt.sendAudio(audioData);
-    });
+    ws.onclose = () => {
+      console.log("WebSocket closed");
+    };
   }
 
   isRecording = !isRecording;
@@ -133,7 +132,7 @@ const run = async () => {
   titleEl.innerText = isRecording
     ? "Click stop to end recording!"
     : "Click start to begin recording!";
-};
+}
 
 buttonEl.addEventListener("click", () => run());
 
