@@ -10,7 +10,7 @@ module.exports = {
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: [".eslintrc.{js,cjs}", "server.js", "tokenGenerator.js"],
       parserOptions: {
         sourceType: "script",
       },

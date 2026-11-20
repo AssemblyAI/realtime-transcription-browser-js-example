@@ -65,30 +65,42 @@ function mergeBuffers(lhs, rhs) {
   return merged;
 }
 
+// AssemblyAI-STT-3.7-Realtime: the streaming model built for live captions
+// and notetakers. For voice agents, use "assemblyai-stt-3-7-realtime-agent".
+// Docs: https://www.assemblyai.com/docs/streaming/select-the-speech-model
+const SPEECH_MODEL = "assemblyai-stt-3-7-realtime";
+const SAMPLE_RATE = 16000; // must match the AudioContext sample rate above
+
 async function run() {
   if (isRecording) {
-    if (ws) {
-      ws.send(JSON.stringify({ type: "Terminate" }));
-      ws.close();
-      ws = null;
-    }
     if (microphone) {
       microphone.stopRecording();
       microphone = null;
+    }
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      // Don't close yet: the server flushes the final Turn, then sends
+      // Termination. ws.onmessage closes the socket when that arrives.
+      ws.send(JSON.stringify({ type: "Terminate" }));
     }
   } else {
     microphone = createMicrophone();
     await microphone.requestPermission();
 
-    const response = await fetch("http://localhost:8000/token");
+    // Same-origin call to server.js, which mints the temporary token.
+    const response = await fetch("/token");
     const data = await response.json();
     if (data.error || !data.token) {
       alert("Failed to get temp token");
       return;
     }
 
-    const endpoint = `wss://streaming.assemblyai.com/v3/ws?sample_rate=16000&formatted_finals=true&token=${data.token}`;
-    ws = new WebSocket(endpoint);
+    // Browsers can't set WebSocket headers, so the token goes in the URL.
+    const params = new URLSearchParams({
+      sample_rate: SAMPLE_RATE,
+      speech_model: SPEECH_MODEL,
+      token: data.token,
+    });
+    ws = new WebSocket(`wss://streaming.assemblyai.com/v3/ws?${params}`);
 
     const turns = {}; // keyed by turn_order
 
@@ -104,7 +116,13 @@ async function run() {
 
     ws.onmessage = (event) => {
       const msg = JSON.parse(event.data);
-      if (msg.type === "Turn") {
+      if (msg.type === "Begin") {
+        // Unknown query params are ignored, not rejected, so confirm the model.
+        console.log("Session started with model:", msg.configuration?.model);
+      } else if (msg.type === "Termination") {
+        ws.close();
+      } else if (msg.type === "Turn") {
+        // Each Turn message replaces the previous one for the same turn_order.
         const { turn_order, transcript } = msg;
         turns[turn_order] = transcript;
 
@@ -122,13 +140,14 @@ async function run() {
       alert("WebSocket error, check the console.");
     };
 
-    ws.onclose = () => {
-      console.log("WebSocket closed");
+    ws.onclose = (event) => {
+      console.log("WebSocket closed", event.code, event.reason);
+      ws = null;
     };
   }
 
   isRecording = !isRecording;
-  buttonEl.innerText = isRecording ? "Stop" : "Record";
+  buttonEl.innerText = isRecording ? "Stop" : "Start";
   titleEl.innerText = isRecording
     ? "Click stop to end recording!"
     : "Click start to begin recording!";

@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const { generateTempToken } = require("./tokenGenerator"); // your previously written function
+const { generateTempToken } = require("./tokenGenerator");
 
 const app = express();
 const PORT = 8000;
@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/token", async (req, res) => {
   try {
-    const token = await generateTempToken(60); // Max value 600
+    const token = await generateTempToken(60); // 1-600 seconds
     res.json({ token });
   } catch (error) {
     res.status(500).json({ error: "Failed to generate token" });
