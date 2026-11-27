@@ -43,7 +43,8 @@ function createMicrophone() {
 
         if (bufferDuration >= 100) {
           const totalSamples = Math.floor(audioContext.sampleRate * 0.1);
-          const finalBuffer = new Uint8Array(audioBufferQueue.subarray(0, totalSamples).buffer);
+          const samples = audioBufferQueue.subarray(0, totalSamples);
+          const finalBuffer = new Uint8Array(samples.buffer, samples.byteOffset, samples.byteLength);
           audioBufferQueue = audioBufferQueue.subarray(totalSamples);
 
           if (onAudioCallback) onAudioCallback(finalBuffer);
